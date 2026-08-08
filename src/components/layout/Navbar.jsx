@@ -14,7 +14,7 @@ function Navbar() {
       <div className="container navbar-container">
 
         <a href="#home" className="logo" onClick={closeMenu}>
-          <h2>Shree Wood Works</h2>
+          <h2>SV Wood Works & Wooden Plugs</h2>
         </a>
 
         <button
