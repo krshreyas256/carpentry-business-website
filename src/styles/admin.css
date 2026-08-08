@@ -1,0 +1,171 @@
+.admin-login-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #f5eee7;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 40px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-login-header h1 {
+  color: #4e342e;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.admin-login-header p {
+  color: #777;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #5d4037;
+}
+
+.form-error {
+  color: #c62828;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.admin-login-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #5d4037;
+  color: white;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.admin-login-button:hover {
+  background: #3e2723;
+}
+
+.admin-login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+  background: #faf8f5;
+}
+
+.admin-dashboard-header {
+  background: #5d4037;
+  color: white;
+
+  padding: 20px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-dashboard-header h1 {
+  font-size: 1.5rem;
+}
+
+.admin-dashboard-header p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.admin-dashboard-header button {
+  padding: 10px 20px;
+
+  border: 1px solid white;
+  border-radius: 7px;
+
+  background: transparent;
+  color: white;
+
+  cursor: pointer;
+}
+
+.admin-dashboard-content {
+  padding: 50px 5%;
+}
+
+.admin-welcome {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+
+  .admin-login-card {
+    padding: 30px 22px;
+  }
+
+  .admin-dashboard-header {
+    padding: 18px 5%;
+  }
+
+  .admin-dashboard-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .admin-dashboard-header button {
+    padding: 8px 14px;
+  }
+
+  .admin-dashboard-content {
+    padding: 30px 5%;
+  }
+}

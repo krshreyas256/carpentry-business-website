@@ -1,19 +1,35 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { Navigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyD4o_7jU32TsTQRhxizmjLOY05CF-F1pIk",
-  authDomain: "sv-wood-works-and-wooden-plugs.firebaseapp.com",
-  projectId: "sv-wood-works-and-wooden-plugs",
-  storageBucket: "sv-wood-works-and-wooden-plugs.firebasestorage.app",
-  messagingSenderId: "485170698233",
-  appId: "1:485170698233:web:3b2914235c71520c0b0f28",
-};
+import { auth } from "../firebase/config";
 
-const app = initializeApp(firebaseConfig);
+function ProtectedRoute({ children }) {
+  const [user, setUser] = useState(null);
+  const [checkingAuth, setCheckingAuth] = useState(true);
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const storage = getStorage(app);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setCheckingAuth(false);
+    });
+
+    return unsubscribe;
+  }, []);
+
+  if (checkingAuth) {
+    return (
+      <div>
+        <p>Checking authentication...</p>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/admin" replace />;
+  }
+
+  return children;
+}
+
+export default ProtectedRoute;
