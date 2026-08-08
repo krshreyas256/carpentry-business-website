@@ -1,17 +1,18 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
-import Hero from "../components/sections/Hero";
-import Services from "../components/sections/Services";
-import Gallery from "../components/sections/Gallery";
-import Clients from "../components/sections/Clients";
-import About from "../components/sections/About";
-import Contact from "../components/sections/Contact";
+import Hero from "../sections/Hero";
+import Services from "../sections/Services";
+import Gallery from "../sections/Gallery";
+import Clients from "../sections/Clients";
+import About from "../sections/About";
+import Contact from "../sections/Contact";
 
 function Home() {
   return (
     <>
       <Navbar />
+
       <main>
         <Hero />
         <Services />
@@ -20,6 +21,7 @@ function Home() {
         <About />
         <Contact />
       </main>
+
       <Footer />
     </>
   );

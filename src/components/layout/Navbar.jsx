@@ -1,37 +1,62 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "../../styles/navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="navbar">
-
       <div className="container navbar-container">
 
-        <div className="logo">
+        <a href="#home" className="logo" onClick={closeMenu}>
           <h2>Shree Wood Works</h2>
-        </div>
+        </a>
 
-        <nav>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
+        <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-links">
 
-            <li><a href="#home">Home</a></li>
+            <li>
+              <a href="#home" onClick={closeMenu}>Home</a>
+            </li>
 
-            <li><a href="#services">Services</a></li>
+            <li>
+              <a href="#services" onClick={closeMenu}>Services</a>
+            </li>
 
-            <li><a href="#gallery">Gallery</a></li>
+            <li>
+              <a href="#gallery" onClick={closeMenu}>Gallery</a>
+            </li>
 
-            <li><a href="#clients">Clients</a></li>
+            <li>
+              <a href="#clients" onClick={closeMenu}>Clients</a>
+            </li>
 
-            <li><a href="#about">About</a></li>
+            <li>
+              <a href="#about" onClick={closeMenu}>About</a>
+            </li>
 
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#contact" onClick={closeMenu}>Contact</a>
+            </li>
 
           </ul>
-
         </nav>
 
       </div>
-
     </header>
   );
 }

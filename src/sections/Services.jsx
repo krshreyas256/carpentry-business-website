@@ -1,5 +1,6 @@
-import "../../styles/services.css";
-import { FaHammer, FaCouch, FaPlug } from "react-icons/fa";
+import "../styles/services.css";
+import { FaHammer, FaCouch } from "react-icons/fa";
+import WoodenPlugIcon from "../components/ui/WoodenPlugIcon";
 
 function Services() {
   const services = [
@@ -16,7 +17,7 @@ function Services() {
         "Kitchen setups, wardrobes, TV units, partitions, and smart interior wood solutions designed to suit your space.",
     },
     {
-      icon: <FaPlug />,
+      icon: <WoodenPlugIcon />,
       title: "Wooden Plug Supply",
       description:
         "Durable wooden plugs trusted by electricians and carpenters for reliable fittings and long-lasting performance.",
