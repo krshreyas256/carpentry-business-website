@@ -1,0 +1,53 @@
+import "../../styles/services.css";
+import { FaHammer, FaCouch, FaPlug } from "react-icons/fa";
+
+function Services() {
+  const services = [
+    {
+      icon: <FaHammer />,
+      title: "Carpentry Services",
+      description:
+        "Custom furniture, repairs, fittings, and practical woodwork for homes, offices, and commercial spaces.",
+    },
+    {
+      icon: <FaCouch />,
+      title: "Interior Work",
+      description:
+        "Kitchen setups, wardrobes, TV units, partitions, and smart interior wood solutions designed to suit your space.",
+    },
+    {
+      icon: <FaPlug />,
+      title: "Wooden Plug Supply",
+      description:
+        "Durable wooden plugs trusted by electricians and carpenters for reliable fittings and long-lasting performance.",
+    },
+  ];
+
+  return (
+    <section id="services" className="services">
+      <div className="container">
+        <div className="section-header">
+          <h2>Our Services</h2>
+          <p>
+            We provide high-quality carpentry and interior solutions with
+            precision, durability, and attention to detail.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div className="service-card" key={index}>
+              <div className="service-icon">{service.icon}</div>
+
+              <h3>{service.title}</h3>
+
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Services;
