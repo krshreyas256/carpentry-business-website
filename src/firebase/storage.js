@@ -1,7 +1,7 @@
 const CLOUDINARY_CLOUD_NAME = "qe8pj462";
 const CLOUDINARY_UPLOAD_PRESET = "sv_wood_works_images";
 
-export const uploadGalleryImage = async (file) => {
+const uploadToCloudinary = async (file) => {
   const allowedTypes = [
     "image/jpeg",
     "image/png",
@@ -43,7 +43,31 @@ export const uploadGalleryImage = async (file) => {
 
   return {
     url: data.secure_url,
-    path: data.public_id,
+    publicId: data.public_id,
     fileName: file.name,
+  };
+};
+
+
+// Gallery image upload
+export const uploadGalleryImage = async (file) => {
+  const uploadedImage = await uploadToCloudinary(file);
+
+  return {
+    url: uploadedImage.url,
+    path: uploadedImage.publicId,
+    fileName: uploadedImage.fileName,
+  };
+};
+
+
+// Client logo upload
+export const uploadClientLogo = async (file) => {
+  const uploadedImage = await uploadToCloudinary(file);
+
+  return {
+    url: uploadedImage.url,
+    publicId: uploadedImage.publicId,
+    fileName: uploadedImage.fileName,
   };
 };
