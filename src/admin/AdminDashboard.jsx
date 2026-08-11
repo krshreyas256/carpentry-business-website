@@ -23,12 +23,12 @@ function AdminDashboard() {
   const [clients, setClients] = useState([]);
 
   const [clientName, setClientName] = useState("");
+  const [clientCategory, setClientCategory] = useState("");
   const [clientLogo, setClientLogo] = useState(null);
 
   const [clientLoading, setClientLoading] = useState(false);
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("Carpentry Services");
   const [file, setFile] = useState(null);
 
   const [loading, setLoading] = useState(false);
@@ -96,14 +96,12 @@ function AdminDashboard() {
     // Save image information in Firestore
     await addGalleryImage({
       title: title.trim(),
-      category,
       imageUrl: uploadedImage.url,
       storagePath: uploadedImage.path,
     });
 
     // Reset form state
     setTitle("");
-    setCategory("Carpentry Services");
     setFile(null);
 
     // Reset file input
@@ -161,11 +159,13 @@ const handleClientUpload = async (e) => {
     // Save client information to Firestore
     await addClient({
       name: clientName.trim(),
+      category: clientCategory.trim(),
       imageUrl: uploadedLogo.url,
       publicId: uploadedLogo.publicId,
     });
 
     setClientName("");
+    setClientCategory("");
     setClientLogo(null);
 
     // Reset file input
@@ -297,38 +297,6 @@ const handleClientDelete = async (client) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="gallery-category">
-                Category
-              </label>
-
-              <select
-                id="gallery-category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="Carpentry Services">
-                  Carpentry Services
-                </option>
-
-                <option value="Interior Work">
-                  Interior Work
-                </option>
-
-                <option value="Furniture">
-                  Custom Furniture
-                </option>
-
-                <option value="Repairs">
-                  Repairs
-                </option>
-
-                <option value="Other">
-                  Other
-                </option>
-              </select>
-            </div>
-
-            <div className="form-group">
               <label htmlFor="gallery-image">
                 Project Image
               </label>
@@ -417,10 +385,6 @@ const handleClientDelete = async (client) => {
                       {image.title}
                     </h3>
 
-                    <p>
-                      {image.category}
-                    </p>
-
                     <button
                       className="delete-button"
                       onClick={() => handleDelete(image)}
@@ -453,37 +417,52 @@ const handleClientDelete = async (client) => {
   >
 
     <div className="form-group">
-      <label htmlFor="client-name">
-        Client Name
-      </label>
+  <label htmlFor="client-name">
+    Client Name
+  </label>
 
-      <input
-        id="client-name"
-        type="text"
-        placeholder="Example: ABC Interiors"
-        value={clientName}
-        onChange={(e) => setClientName(e.target.value)}
-        required
-      />
-    </div>
+  <input
+    id="client-name"
+    type="text"
+    placeholder="Example: Syros"
+    value={clientName}
+    onChange={(e) => setClientName(e.target.value)}
+    required
+  />
+</div>
 
-    <div className="form-group">
-      <label htmlFor="client-logo">
-        Client Logo
-      </label>
+<div className="form-group">
+  <label htmlFor="client-category">
+    Client Category
+  </label>
 
-      <input
-        id="client-logo"
-        type="file"
-        accept=".jpg,.jpeg,.png,.webp"
-        onChange={(e) => setClientLogo(e.target.files[0])}
-        required
-      />
+  <input
+    id="client-category"
+    type="text"
+    placeholder="Example: Architectural Hardware Products"
+    value={clientCategory}
+    onChange={(e) => setClientCategory(e.target.value)}
+    required
+  />
+</div>
 
-      <small>
-        Maximum file size: 5 MB
-      </small>
-    </div>
+<div className="form-group">
+  <label htmlFor="client-logo">
+    Client Logo
+  </label>
+
+  <input
+    id="client-logo"
+    type="file"
+    accept=".jpg,.jpeg,.png,.webp"
+    onChange={(e) => setClientLogo(e.target.files[0])}
+    required
+  />
+
+  <small>
+    Maximum file size: 5 MB
+  </small>
+</div>
 
     {clientLogo && (
       <p className="selected-file">
@@ -539,6 +518,10 @@ const handleClientDelete = async (client) => {
             <h3>
               {client.name}
             </h3>
+
+            <p>
+              {client.category}
+            </p>
 
             <button
               className="delete-button"

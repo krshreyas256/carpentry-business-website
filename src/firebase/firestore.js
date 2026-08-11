@@ -20,13 +20,11 @@ const galleryCollection = collection(db, "gallery");
 
 export const addGalleryImage = async ({
   title,
-  category,
   imageUrl,
   storagePath,
 }) => {
   await addDoc(galleryCollection, {
     title,
-    category,
     imageUrl,
     storagePath,
     createdAt: serverTimestamp(),
@@ -60,11 +58,13 @@ const clientsCollection = collection(db, "clients");
 
 export const addClient = async ({
   name,
+  category,
   imageUrl,
   publicId,
 }) => {
   await addDoc(clientsCollection, {
     name,
+    category,
     imageUrl,
     publicId,
     createdAt: serverTimestamp(),

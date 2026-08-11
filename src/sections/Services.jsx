@@ -1,6 +1,7 @@
 import "../styles/services.css";
 import { FaHammer, FaCouch } from "react-icons/fa";
 import WoodenPlugIcon from "../components/ui/WoodenPlugIcon";
+import SectionTitle from "../components/ui/SectionTitle";
 
 function Services() {
   const services = [
@@ -27,13 +28,10 @@ function Services() {
   return (
     <section id="services" className="services">
       <div className="container">
-        <div className="section-header">
-          <h2>Our Services</h2>
-          <p>
-            We provide high-quality carpentry and interior solutions with
-            precision, durability, and attention to detail.
-          </p>
-        </div>
+        <SectionTitle
+          title="Our Services"
+          subtitle="We provide high-quality carpentry and interior solutions with precision, durability, and attention to detail."
+        />
 
         <div className="services-grid">
           {services.map((service, index) => (
