@@ -1,7 +1,13 @@
+import "../../styles/footer.css";
+
 function Footer() {
   return (
-    <footer>
-      <p>© 2026 SV Wood Works & Wooden Plugs. All rights reserved.</p>
+    <footer className="footer">
+      <h3>SV Wood Works & Wooden Plugs</h3>
+
+      <p>
+        © 2026 SV Wood Works & Wooden Plugs. All rights reserved.
+      </p>
     </footer>
   );
 }

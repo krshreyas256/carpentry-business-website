@@ -1,0 +1,40 @@
+.footer {
+  padding: 35px 20px;
+
+  background: #4e342e;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.footer h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer p {
+  margin: 0;
+
+  color: #e6ddd6;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 16px;
+  }
+
+  .footer h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+}
