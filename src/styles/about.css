@@ -1,0 +1,295 @@
+/* =========================
+   About Section
+========================= */
+
+.about-section {
+  padding: 80px 20px;
+
+  background: #f7f3eb;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   About Card
+========================= */
+
+.about-card {
+  background: #ffffff;
+
+  border: 1px solid #e6ddd6;
+  border-radius: 20px;
+
+  padding: 45px 50px;
+
+  box-shadow:
+    0 8px 25px rgba(78, 52, 46, 0.06);
+}
+
+
+/* =========================
+   About Section Header
+========================= */
+
+.about-card .section-header {
+  margin-bottom: 30px;
+}
+
+.about-card .section-header p {
+  max-width: 900px;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 16px;
+  }
+
+  .about-card {
+    padding: 35px 22px;
+
+    border-radius: 16px;
+  }
+
+  .about-card .section-header {
+    margin-bottom: 25px;
+  }
+
+  .about-card .section-header p {
+    line-height: 1.7;
+  }
+
+  .about-highlights {
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 15px;
+  }
+
+  .about-highlight {
+    width: 100%;
+    max-width: 320px;
+
+    padding: 9px 14px;
+
+    font-size: 0.9rem;
+  }
+
+  .why-choose-us {
+  margin-top: 45px;
+  padding-top: 40px;
+}
+
+.why-choose-us .section-header {
+  margin-bottom: 30px;
+}
+
+.why-choose-us .section-header h2 {
+  font-size: 2rem;
+}
+
+.why-choose-grid {
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.why-choose-card {
+  padding: 28px 18px;
+}
+
+.why-choose-icon {
+  width: 60px;
+  height: 60px;
+
+  font-size: 1.5rem;
+}
+
+.why-choose-card h3 {
+  font-size: 1.05rem;
+}
+
+.why-choose-card p {
+  font-size: 0.92rem;
+}
+}
+
+.about-block {
+  margin-bottom: 24px;
+}
+
+.about-block h3 {
+  font-size: 1.1rem;
+}
+
+.about-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   Why Choose Us
+========================= */
+
+.why-choose-us {
+  margin-top: 65px;
+  padding-top: 55px;
+
+  border-top: 1px solid #e6ddd6;
+}
+
+.why-choose-us .section-header {
+  margin-bottom: 40px;
+}
+
+.why-choose-us .section-header h2 {
+  font-size: 2.3rem;
+}
+
+
+/* =========================
+   Why Choose Us Grid
+========================= */
+
+.why-choose-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================
+   Why Choose Us Card
+========================= */
+
+.why-choose-card {
+  background: #faf8f5;
+
+  padding: 35px 25px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  border: 1px solid #e6ddd6;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 10px 25px rgba(78, 52, 46, 0.1);
+}
+
+
+/* =========================
+   Why Choose Us Icon
+========================= */
+
+.why-choose-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 20px;
+
+  background: #f3e5d0;
+
+  color: #5d4037;
+
+  border: 2px solid #c99555;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.8rem;
+}
+
+
+/* =========================
+   Why Choose Us Text
+========================= */
+
+.why-choose-card h3 {
+  margin: 0 0 15px;
+
+  color: #4e342e;
+
+  font-size: 1.2rem;
+
+  line-height: 1.4;
+}
+
+.why-choose-card p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   About Content
+========================= */
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-block {
+  margin-bottom: 28px;
+}
+
+.about-block:last-child {
+  margin-bottom: 0;
+}
+
+.about-block h3 {
+  margin: 0 0 8px;
+
+  color: #4e342e;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about-block p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 480px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-card {
+    padding: 30px 20px;
+  }
+}
