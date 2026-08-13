@@ -3,7 +3,7 @@
 ========================= */
 
 .contact-section {
-  padding: 80px 20px;
+  padding: 50px 20px;
 
   background: #f7f3eb;
 }
@@ -445,7 +445,7 @@
 @media (max-width: 800px) {
 
   .contact-section {
-    padding: 60px 16px;
+    padding: 5px 16px;
   }
 
 
@@ -462,8 +462,9 @@
 
 
   .contact-subsection-title h3 {
-    font-size: 1.7rem;
-  }
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
 
 
   /* Get in touch becomes

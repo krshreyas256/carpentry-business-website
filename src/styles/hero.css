@@ -1,87 +1,206 @@
+/* =========================
+   Hero Section
+========================= */
+
 .hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
+  min-height: 82vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 0;
 }
 
 .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
 }
 
 .hero-content {
-    flex: 1;
+  flex: 1 1 0;
+
+  min-width: 0;
 }
 
 .hero-tag {
-    display: inline-block;
-    background: #e8d8c5;
-    color: #5D4037;
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-size: .9rem;
-    margin-bottom: 20px;
+  display: inline-block;
+
+  background: #e8d8c5;
+  color: #5d4037;
+
+  padding: 7px 16px;
+
+  border-radius: 25px;
+
+  font-size: 0.85rem;
+
+  margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #4E342E;
+  margin: 0 0 18px;
+
+  color: #4e342e;
+
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+
+  line-height: 1.15;
 }
 
 .hero p {
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-bottom: 35px;
-    max-width: 600px;
+  max-width: 600px;
+
+  margin: 0 0 30px;
+
+  color: #59483c;
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
 }
+
+
+/* =========================
+   Hero Buttons
+========================= */
 
 .hero-buttons {
-    display: flex;
-    gap: 20px;
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
 }
 
-.btn {
-    background: #5D4037;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
-    transition: .3s;
-    font-weight: 500;
+.hero .btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 180px;
+
+  padding: 15px 28px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.btn:hover {
-    background: #3E2723;
+.hero .btn svg {
+  font-size: 1.25rem;
+
+  flex-shrink: 0;
 }
 
-.btn-secondary {
-    background: #25D366;
+
+/* =========================
+   Call Button
+========================= */
+
+.hero-call-button {
+  background: #5d2e1f;
+
+  color: #ffffff;
 }
+
+.hero-call-button:hover {
+  background: #4e2519;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(78, 52, 46, 0.2);
+}
+
+
+/* =========================
+   WhatsApp Button
+========================= */
+
+.hero-whatsapp-button {
+  background: #ffffff;
+
+  color: #2f241f;
+
+  border: 1px solid #ddd5ce !important;
+}
+
+.hero-whatsapp-button:hover {
+  background: #f8f5f2;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(78, 52, 46, 0.12);
+}
+
+.hero-whatsapp-button svg {
+  color: #25d366;
+}
+
+
+/* =========================
+   Hero Image
+========================= */
 
 .hero-image {
-    flex: 1;
+  flex: 1 1 0;
+
+  min-width: 0;
 }
 
 .hero-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.2);
+  width: 100%;
+  max-width: 100%;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.15);
 }
+
+
+/* =========================
+   Tablet
+========================= */
 
 @media (max-width: 900px) {
 
   .hero {
     min-height: auto;
-    padding: 70px 0;
+
+    padding: 55px 0;
   }
 
   .hero-container {
     flex-direction: column;
+
     text-align: center;
-    gap: 40px;
+
+    gap: 35px;
   }
 
   .hero-content {
@@ -89,7 +208,7 @@
   }
 
   .hero h1 {
-    font-size: 2.7rem;
+    font-size: clamp(2.2rem, 7vw, 2.8rem);
   }
 
   .hero p {
@@ -99,43 +218,70 @@
 
   .hero-buttons {
     justify-content: center;
-    flex-wrap: wrap;
   }
 
   .hero-image {
     width: 100%;
+
+    max-width: 650px;
   }
 }
+
+
+/* =========================
+   Mobile
+========================= */
 
 @media (max-width: 600px) {
 
   .hero {
-    padding: 55px 0;
+    padding: 45px 0 50px;
+  }
+
+  .hero-container {
+    gap: 28px;
   }
 
   .hero h1 {
     font-size: 2.15rem;
+
+    line-height: 1.18;
   }
 
   .hero p {
     font-size: 0.95rem;
+
     line-height: 1.7;
+
+    margin-bottom: 25px;
   }
 
   .hero-tag {
     font-size: 0.75rem;
+
     padding: 7px 14px;
+
+    margin-bottom: 15px;
   }
 
   .hero-buttons {
     flex-direction: column;
+
     width: 100%;
+
     gap: 12px;
   }
 
-  .btn {
+  .hero .btn {
     width: 100%;
-    text-align: center;
+
+    min-width: 0;
+
+    padding: 14px 20px;
+  }
+
+  .hero-image {
+    width: 100%;
   }
 
   .hero-image img {

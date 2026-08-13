@@ -3,7 +3,7 @@
 ========================= */
 
 .gallery-section {
-  padding: 80px 20px;
+  padding: 50px 20px;
   background-color: var(--color-background);
 }
 
@@ -164,7 +164,7 @@
 
 @media (max-width: 600px) {
   .gallery-section {
-    padding: 60px 16px;
+    padding: 30px 16px;
   }
 
   .gallery-grid {

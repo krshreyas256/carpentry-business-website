@@ -36,24 +36,24 @@ function Contact() {
   };
 
   const handleInquirySubmit = () => {
-  setInquiryError("");
+    setInquiryError("");
 
-  if (!inquiryName.trim()) {
-    setInquiryError("Please enter your name.");
-    return;
-  }
+    if (!inquiryName.trim()) {
+      setInquiryError("Please enter your name.");
+      return;
+    }
 
-  if (!inquiryMobile.trim()) {
-    setInquiryError("Please enter your mobile number.");
-    return;
-  }
+    if (!inquiryMobile.trim()) {
+      setInquiryError("Please enter your mobile number.");
+      return;
+    }
 
-  if (!inquiryType) {
-    setInquiryError("Please select the type of work required.");
-    return;
-  }
+    if (!inquiryType) {
+      setInquiryError("Please select the type of work required.");
+      return;
+    }
 
-  const message = `Hello, I would like to make a work inquiry.
+    const message = `Hello, I would like to make a work inquiry.
 
 Name: ${inquiryName.trim()}
 Mobile Number: ${inquiryMobile.trim()}
@@ -64,16 +64,16 @@ ${inquiryType}
 Requirements:
 ${inquiryRequirements.trim() || "Not specified"}`;
 
-  const whatsappUrl = `https://wa.me/919880121352?text=${encodeURIComponent(
-    message
-  )}`;
+    const whatsappUrl = `https://wa.me/919880121352?text=${encodeURIComponent(
+      message
+    )}`;
 
-  window.open(
-    whatsappUrl,
-    "_blank",
-    "noopener,noreferrer"
-  );
-};
+    window.open(
+      whatsappUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -218,7 +218,10 @@ ${inquiryRequirements.trim() || "Not specified"}`;
 
           {/* QUICK WORK INQUIRY */}
 
-          <div className="contact-subsection contact-inquiry-section">
+          <div
+            id="work-inquiry"
+            className="contact-subsection contact-inquiry-section"
+          >
 
             <div className="contact-subsection-title">
               <h3>Quick Work Inquiry</h3>
@@ -226,115 +229,115 @@ ${inquiryRequirements.trim() || "Not specified"}`;
 
             <div className="inquiry-form">
 
-  <div className="inquiry-form-group">
-    <label htmlFor="inquiry-name">
-      Name
-    </label>
+              <div className="inquiry-form-group">
+                <label htmlFor="inquiry-name">
+                  Name
+                </label>
 
-    <input
-      id="inquiry-name"
-      type="text"
-      placeholder="Enter your name"
-      value={inquiryName}
-      onChange={(e) => {
-        setInquiryName(e.target.value);
-        setInquiryError("");
-      }}
-    />
-  </div>
-
-
-  <div className="inquiry-form-group">
-    <label htmlFor="inquiry-mobile">
-      Mobile Number
-    </label>
-
-    <input
-      id="inquiry-mobile"
-      type="tel"
-      placeholder="Enter your mobile number"
-      value={inquiryMobile}
-      onChange={(e) => {
-        setInquiryMobile(e.target.value);
-        setInquiryError("");
-      }}
-    />
-  </div>
+                <input
+                  id="inquiry-name"
+                  type="text"
+                  placeholder="Enter your name"
+                  value={inquiryName}
+                  onChange={(e) => {
+                    setInquiryName(e.target.value);
+                    setInquiryError("");
+                  }}
+                />
+              </div>
 
 
-  <div className="inquiry-form-group">
-    <label htmlFor="inquiry-type">
-      Type of Work
-    </label>
+              <div className="inquiry-form-group">
+                <label htmlFor="inquiry-mobile">
+                  Mobile Number
+                </label>
 
-    <select
-      id="inquiry-type"
-      value={inquiryType}
-      onChange={(e) => {
-        setInquiryType(e.target.value);
-        setInquiryError("");
-      }}
-    >
-      <option value="">
-        Select a service
-      </option>
-
-      <option value="Carpentry Services">
-        Carpentry Services
-      </option>
-
-      <option value="Interior Work (Kitchen, Wardrobes, TV Units)">
-        Interior Work (Kitchen, Wardrobes, TV Units)
-      </option>
-
-      <option value="Wooden Plugs Supply">
-        Wooden Plugs Supply
-      </option>
-
-      <option value="Other Woodwork Consultation">
-        Other Woodwork Consultation
-      </option>
-    </select>
-  </div>
+                <input
+                  id="inquiry-mobile"
+                  type="tel"
+                  placeholder="Enter your mobile number"
+                  value={inquiryMobile}
+                  onChange={(e) => {
+                    setInquiryMobile(e.target.value);
+                    setInquiryError("");
+                  }}
+                />
+              </div>
 
 
-  <div className="inquiry-form-group">
-    <label htmlFor="inquiry-requirements">
-      Briefly Describe Your Requirements
-    </label>
+              <div className="inquiry-form-group">
+                <label htmlFor="inquiry-type">
+                  Type of Work
+                </label>
 
-    <textarea
-      id="inquiry-requirements"
-      rows="5"
-      placeholder="Tell us briefly about your project or requirements..."
-      value={inquiryRequirements}
-      onChange={(e) =>
-        setInquiryRequirements(e.target.value)
-      }
-    />
-  </div>
+                <select
+                  id="inquiry-type"
+                  value={inquiryType}
+                  onChange={(e) => {
+                    setInquiryType(e.target.value);
+                    setInquiryError("");
+                  }}
+                >
+                  <option value="">
+                    Select a service
+                  </option>
+
+                  <option value="Carpentry Services">
+                    Carpentry Services
+                  </option>
+
+                  <option value="Interior Work (Kitchen, Wardrobes, TV Units)">
+                    Interior Work (Kitchen, Wardrobes, TV Units)
+                  </option>
+
+                  <option value="Wooden Plugs Supply">
+                    Wooden Plugs Supply
+                  </option>
+
+                  <option value="Other Woodwork Consultation">
+                    Other Woodwork Consultation
+                  </option>
+                </select>
+              </div>
 
 
-  {inquiryError && (
-    <p className="inquiry-error">
-      {inquiryError}
-    </p>
-  )}
+              <div className="inquiry-form-group">
+                <label htmlFor="inquiry-requirements">
+                  Briefly Describe Your Requirements
+                </label>
+
+                <textarea
+                  id="inquiry-requirements"
+                  rows="5"
+                  placeholder="Tell us briefly about your project or requirements..."
+                  value={inquiryRequirements}
+                  onChange={(e) =>
+                    setInquiryRequirements(e.target.value)
+                  }
+                />
+              </div>
 
 
-  <button
-    type="button"
-    className="inquiry-whatsapp-button"
-    onClick={handleInquirySubmit}
-  >
-    <FaWhatsapp />
+              {inquiryError && (
+                <p className="inquiry-error">
+                  {inquiryError}
+                </p>
+              )}
 
-    <span>
-      Send Inquiry on WhatsApp
-    </span>
-  </button>
 
-</div>
+              <button
+                type="button"
+                className="inquiry-whatsapp-button"
+                onClick={handleInquirySubmit}
+              >
+                <FaWhatsapp />
+
+                <span>
+                  Send Inquiry on WhatsApp
+                </span>
+              </button>
+
+            </div>
 
           </div>
 

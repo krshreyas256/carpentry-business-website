@@ -44,6 +44,20 @@ function Services() {
             </div>
           ))}
         </div>
+
+        <div className="services-cta">
+          <h3>Need a Custom Solution?</h3>
+
+          <p>
+            We handle projects of all sizes — from single furniture pieces to
+            complete interior setups.
+          </p>
+
+          <a href="#work-inquiry" className="services-cta-button">
+            Request a Quote
+          </a>
+        </div>
+
       </div>
     </section>
   );
