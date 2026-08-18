@@ -6,19 +6,40 @@ import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import ProtectedRoute from "./admin/ProtectedRoute";
 
+import FloatingWhatsApp from "./components/ui/FloatingWhatsApp";
+
 function App() {
   return (
     <BrowserRouter>
 
       <Routes>
 
-        {/* Public website */}
-        <Route path="/" element={<Home />} />
+        {/* =========================
+            Public Website
+        ========================= */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <FloatingWhatsApp />
+            </>
+          }
+        />
 
-        {/* Admin login */}
-        <Route path="/admin" element={<AdminLogin />} />
 
-        {/* Protected admin dashboard */}
+        {/* =========================
+            Admin Login
+        ========================= */}
+        <Route
+          path="/admin"
+          element={<AdminLogin />}
+        />
+
+
+        {/* =========================
+            Protected Admin Dashboard
+        ========================= */}
         <Route
           path="/admin/dashboard"
           element={

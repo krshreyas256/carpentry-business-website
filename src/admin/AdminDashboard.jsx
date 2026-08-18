@@ -257,7 +257,7 @@ const handleClientDelete = async (client) => {
       <header className="admin-dashboard-header">
         <div>
           <h1>Admin Dashboard</h1>
-          <p>Shree Wood Works</p>
+          <p>SV Wood Works & Wooden Plugs</p>
         </div>
 
         <button onClick={handleLogout}>
